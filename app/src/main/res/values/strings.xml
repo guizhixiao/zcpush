@@ -36,7 +36,7 @@
         设置免打扰时段,在免打扰时段内,当用户收到通知时,会去除通知的提示音、振动以及提示灯闪烁.\n\n注意事项:\n1.如果开始时间小于结束时间,免打扰时段为当天的起始时间到结束时间.\n2.如果开始时间大于结束时间,免打扰时段为第一天起始时间到第二天结束时间.\n3.如果开始时间和结束时间的设置均为00:00时,取消免打扰时段功能.\n
     </string>
     <string name="prompt_about">订单查看</string>
-    <string name="prompt_help">帮助</string>
+    <string name="prompt_help">订单统计</string>
     <string name="prompt_feedback">反馈</string>
     <string name="prompt_confirm">确认</string>
 </resources>
