@@ -9,28 +9,21 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore.Audio;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.TimePicker;
-import android.widget.Toast;
 
 import com.baidu.android.pushservice.BasicPushNotificationBuilder;
 import com.baidu.android.pushservice.CustomPushNotificationBuilder;
 import com.baidu.android.pushservice.PushConstants;
 import com.baidu.android.pushservice.PushManager;
-import com.baidu.ufosdk.UfoSDK;
 
 import java.util.List;
 
@@ -211,6 +204,9 @@ public class PushDemoActivity extends Activity implements OnClickListener {
 
         menu.add(Menu.NONE, Menu.FIRST + 1, 1, R.string.prompt_about).setIcon(
                 android.R.drawable.ic_menu_info_details);
+
+        menu.add(Menu.NONE, Menu.FIRST + 2, 1, R.string.prompt_help).setIcon(
+                android.R.drawable.ic_menu_help);
         return true;
     }
 
@@ -221,6 +217,11 @@ public class PushDemoActivity extends Activity implements OnClickListener {
             showAbout();
             return true;
         }
+
+        if (Menu.FIRST + 2 == item.getItemId()) {
+            showHelp();
+            return true;
+        }
         return false;
     }
 
@@ -228,6 +229,13 @@ public class PushDemoActivity extends Activity implements OnClickListener {
     // 关于
     private void showAbout() {
         Uri uri = Uri.parse("https://www.lh-yj.cn/shop/wxOrder/orderList");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
+
+    // 帮助
+    private void showHelp() {
+        Uri uri = Uri.parse("https://www.lh-yj.cn/shop/wxOrder/orderTjList.do");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }
