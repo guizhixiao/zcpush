@@ -128,9 +128,7 @@ public class MyPushMessageReceiver extends PushMessageReceiver {
     public void onNotificationArrived(Context context, String title,
                                       String description, String customContentString) {
 
-        String notifyString = "通知到达 onNotificationArrived  title=\"" + title
-                + "\" description=\"" + description + "\" customContent="
-                + customContentString;
+        String notifyString = "订单信息:" + description ;
         Log.d(TAG, notifyString);
 
         // 自定义内容获取方式，mykey和myvalue对应通知推送时自定义内容中设置的键和值
