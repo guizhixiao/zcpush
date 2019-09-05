@@ -37,6 +37,6 @@
     </string>
     <string name="prompt_about">订单查看</string>
     <string name="prompt_help">订单统计</string>
-    <string name="prompt_feedback">反馈</string>
+    <string name="prompt_feedback">商品订单统计</string>
     <string name="prompt_confirm">确认</string>
 </resources>

@@ -207,6 +207,8 @@ public class PushDemoActivity extends Activity implements OnClickListener {
 
         menu.add(Menu.NONE, Menu.FIRST + 2, 1, R.string.prompt_help).setIcon(
                 android.R.drawable.ic_menu_help);
+        menu.add(Menu.NONE, Menu.FIRST + 3, 1, R.string.prompt_feedback).setIcon(
+                android.R.drawable.ic_menu_add);
         return true;
     }
 
@@ -220,6 +222,10 @@ public class PushDemoActivity extends Activity implements OnClickListener {
 
         if (Menu.FIRST + 2 == item.getItemId()) {
             showHelp();
+            return true;
+        }
+        if (Menu.FIRST + 3 == item.getItemId()) {
+            showFk();
             return true;
         }
         return false;
@@ -236,6 +242,12 @@ public class PushDemoActivity extends Activity implements OnClickListener {
     // 帮助
     private void showHelp() {
         Uri uri = Uri.parse("https://www.lh-yj.cn/shop/wxOrder/orderTjList.do");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
+    // 帮助
+    private void showFk() {
+        Uri uri = Uri.parse("https://www.lh-yj.cn/shop/wxOrder/orderProTjList.do");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }
